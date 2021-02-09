@@ -30,14 +30,27 @@ client.once('ready', () => {
 		})
 	})
 
-	command(client, ['purgeall', 'pa'], message => {
-		if (message.member.hasPermission('ADMINISTRATOR')) {
-			message.channel.fetch().then(messages => {
-				message.channel.bulkDelete(messages)
-				
-			})
-		}
-	})
+	command(client, ['purge', 'clear'], async message => {
+
+        const messageArray = message.content.split(' ');
+        const args = messageArray.slice(1);
+
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You lack the permissions needed for this command!');
+
+        let deleteAmount;
+
+        if (isNaN(args[0]) || parseInt(args[0]) <= 0) { return message.reply('Requires an amount') }
+
+        if (parseInt(args[0]) > 99) {
+            return message.reply('You can only delete 99 messages at a time!')
+        } else {
+            deleteAmount = parseInt(args[0]);
+        }
+
+        message.channel.bulkDelete(deleteAmount + 1, true);
+        await message.channel.send(`*Successfully* Deleted **${deleteAmount}** Messages!`).then(m => m.delete({ timeout: 3000 }))
+
+    })
 });
 
 
