@@ -30,7 +30,7 @@ client.once('ready', () => {
 		})
 	})
 
-	command(client, ['purge', 'clear'], async message => {
+	command(client, ['purge', 'clear'],  message => {
 
         const messageArray = message.content.split(' ');
         const args = messageArray.slice(1);
@@ -48,7 +48,7 @@ client.once('ready', () => {
         }
 
         message.channel.bulkDelete(deleteAmount + 1, true);
-        await message.channel.send(`*Successfully* Deleted **${deleteAmount}** Messages!`).then(m => m.delete({ timeout: 3000 }))
+         message.channel.send(`*Successfully* Deleted **${deleteAmount}** Messages!`).then(m => m.delete({ timeout: 3000 }))
 
     })
 });
