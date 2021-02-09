@@ -33,7 +33,7 @@ client.once('ready', () => {
 	command(client, ['purgeall', 'pa'], message => {
 		if (message.member.hasPermission('ADMINISTRATOR')) {
 			message.channel.fetch().then(results => {
-				message.bulkDelete(results)
+				message.channel.bulkDelete(results)
 				
 			})
 		}
