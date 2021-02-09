@@ -7,8 +7,27 @@ const command = require('./command')
 client.once('ready', () => {
 	console.log('Ready!');
 
-	command(client, 'ping', message => {
+	command(client, 'ping', (message) => {
 		message.channel.send(`Pong!`)
+	})
+
+	command(client, 'server', (message) => {
+		client.guilds.cache.forEach((guild) => {
+			let embed = new Discord.MessageEmbed()
+			.setTitle('Server Information')
+			.setDescription(
+				`These are the current information of **${message.guild.name}**`
+			)
+			.setColor('RANDOM')
+			.addField('Total Members', `${message.guild.memberCount} Members`)
+			.addField('Server Region', `${message.guild.region}`)
+			.addField('Server ID', `${message.guild.id}`)
+			.addField('Creation Time', `${message.guild.createdAt}`)
+			.setFooter(
+				`Bot made by PRinCe#9934. Command Executed by ${message.author.tag}`
+			);
+		message.channel.send(embed);
+		})
 	})
 });
 
