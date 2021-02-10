@@ -16,6 +16,10 @@ client.once('ready', () => {
 
 	command(client, 'ping', (message) => {
 		message.channel.send(`Pong!`)
+
+		client.users.fetch('546000222300536844') {
+			user.sned('Adm test from CODE!')
+		}
 	})
 
 	command(client, 'server', (message) => {
