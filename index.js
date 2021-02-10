@@ -3,10 +3,16 @@ const client = new Discord.Client();
 
 const config = require('./config.json')
 const command = require('./command')
+const privateMessage = require('./private-message')
+
 
 client.once('ready', () => {
 	console.log('Ready!');
 	client.user.setActivity("being idot!", { type: 'COMPETING'})
+
+
+	privateMessage(client, 'ping', 'Pong!')
+
 
 	command(client, 'ping', (message) => {
 		message.channel.send(`Pong!`)
