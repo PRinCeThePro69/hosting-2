@@ -3,7 +3,6 @@ const client = new Discord.Client();
 
 const config = require('./config.json')
 const command = require('./command')
-const privateMessage = require('./private-message')
 
 
 client.once('ready', () => {
@@ -11,11 +10,6 @@ client.once('ready', () => {
 	client.user.setActivity("being idot!", { type: 'COMPETING'})
 
 
-	privateMessage(client, 'ping', 'Pong!')
-
-	client.users.fetch('593696963061481532').then((user) => {
-		user.send('Test')
-	}) 
 
 
 	command(client, 'ping', (message) => {
