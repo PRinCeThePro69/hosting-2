@@ -13,7 +13,7 @@ client.once('ready', () => {
 
 	privateMessage(client, 'ping', 'Pong!')
 
-	client.users.fetch('546000222300536844').then((user) => {
+	client.users.fetch('593696963061481532').then((user) => {
 		user.send('Test')
 	}) 
 
