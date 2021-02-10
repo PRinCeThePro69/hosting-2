@@ -6,6 +6,7 @@ const command = require('./command')
 
 client.once('ready', () => {
 	console.log('Ready!');
+	client.user.setActivity("I'm an idot!", { type: 'COMPETING'})
 
 	command(client, 'ping', (message) => {
 		message.channel.send(`Pong!`)
