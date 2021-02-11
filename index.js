@@ -3,14 +3,14 @@ const client = new Discord.Client();
 
 const config = require('./config.json')
 const command = require('./command')
-
+const roleClaim = require('./role-cliam')
 
 client.once('ready', () => {
 	console.log('Ready!');
 	client.user.setActivity("being idot!", { type: 'COMPETING'})
 
 
-
+	roleClaim(client)
 
 	command(client, 'ping', (message) => {
 		message.channel.send(`Pong!`)
