@@ -51,10 +51,11 @@ client.once('ready', () => {
 		.setColor('RANDOM')
 		.addField('Miscellenious Commands(1)', "`help`")
 		.addField('Information Commands (1)', "`a!server`")
+
 	 if (message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_MESSAGES')) {
-		let embed = new Discord.MessageEmbed()
+		let membed = new Discord.MessageEmbed()
 		.addField('Moderation Commands(1)', "`purgeall`");
-		message.channel.send(embed)
+		message.channel.send(membed, embed)
 	 }
 	})
 });
