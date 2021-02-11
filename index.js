@@ -43,6 +43,9 @@ client.once('ready', () => {
 				
 			})
 		}
+	}) 
+	command (client, 'help', message => {
+		message.channel.send('Coming Soon...')
 	})
 });
 
