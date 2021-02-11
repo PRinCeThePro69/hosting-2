@@ -62,7 +62,7 @@ client.once('ready', () => {
 	// }
 	}) 
 	command(client, 'mod-cmds', message => {
-		var modperms  = (message.author.hasPermission('ADMINISTRATOR') || message.author.hasPermission('KICK_MEMBERS') || message.author.hasPermission('BAN_MEMBERS') || message.author.hasPermission('MANAGE_CHANNELS') || message.author.hasPermission('MANAGE_GUILD') || message.author.hasPermission('VIEW_AUDIT_LOG') || message.author.hasPermission('MANAGE_MESSAGES') || message.author.hasPermission('MENTION_EVERYONE') || message.author.hasPermission('VIEW_GUILD_INSIGHTS') || message.author.hasPermission('MUTE_MEMBERS') || message.author.hasPermission('DEAFEN_MEMBERS') || message.author.hasPermission('MOVE_MEMBERS') || message.author.hasPermission('MANAGE_NICKNAMES') || message.author.hasPermission('MANAGE_ROLES') || message.author.hasPermission('MANAGE_WEBHOOKS') || message.author.hasPermission('MANAGE_EMOJIS'))
+		var modperms  = (message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('KICK_MEMBERS') || message.member.hasPermission('BAN_MEMBERS') || message.member.hasPermission('MANAGE_CHANNELS') || message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('VIEW_AUDIT_LOG') || message.member.hasPermission('MANAGE_MESSAGES') || message.member.hasPermission('MENTION_EVERYONE') || message.member.hasPermission('VIEW_GUILD_INSIGHTS') || message.member.hasPermission('MUTE_MEMBERS') || message.member.hasPermission('DEAFEN_MEMBERS') || message.member.hasPermission('MOVE_MEMBERS') || message.member.hasPermission('MANAGE_NICKNAMES') || message.member.hasPermission('MANAGE_ROLES') || message.member.hasPermission('MANAGE_WEBHOOKS') || message.member.hasPermission('MANAGE_EMOJIS'))
 		
 		if(modperms) {
 			let membed = new Discord.MessageEmbed()
