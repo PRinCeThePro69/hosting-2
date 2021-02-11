@@ -45,7 +45,16 @@ client.once('ready', () => {
 		}
 	}) 
 	command (client, 'help', message => {
-		message.channel.send('Coming Soon...')
+		let embed = new Discord.MessageEmbed()
+		.setTitle('Help Menu')
+		.setDescription('My prefix is `a!`. The are the command list of me. **Make sure to use the prefix before each command!')
+		.setColor('RANDOM')
+		.addField('Miscellenious Commands(1)', "`help`")
+		.addField('Information Commands (1)', "`a!server`")
+	 if (message.member.hasPermission('ADMINISTRATOR') || message.member.hasPermission('MANAGE_MESSAGES')) {
+		let embed = new Discord.MessageEmbed()
+		.addField('Moderation Commands(1)', "`purgeall`")
+	 }
 	})
 });
 
