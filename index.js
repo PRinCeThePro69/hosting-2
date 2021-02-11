@@ -69,6 +69,8 @@ client.once('ready', () => {
 			.setColor('RANDOM')
 			.addField('Moderation Commands(1)', "`purgeall`")
 			.setFooter('Want more help? user the "a!help" command!')
+			.setTimestamp();
+			message.channel.send(membed)
 		}
 		
 		
