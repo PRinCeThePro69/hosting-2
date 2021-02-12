@@ -83,8 +83,9 @@ client.once('ready', () => {
 		if (member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')) {
 			console.log('WORKS....')
 		} else {
-			message.channel.send(`<@${member.id}> You do not have permissions to use this command!`)
+			
 		}
+		message.channel.send(`<@${member.id}> You do not have permissions to use this command!`)
 	})
 });
 
