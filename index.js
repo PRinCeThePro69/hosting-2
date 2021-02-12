@@ -39,7 +39,28 @@ client.once('ready', () => {
 	command(client, ['purgeall', 'pa'], message => {
 		if (message.member.hasPermission('ADMINISTRATOR')) {
 			message.channel.fetch().then(messages => {
-				message.channel.bulkDelete(messages)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+
+
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+				message.channel.bulkDelete(99)
+
 				
 			})
 		}
