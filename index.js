@@ -68,12 +68,23 @@ client.once('ready', () => {
 			let membed = new Discord.MessageEmbed()
 			.setColor('RANDOM')
 			.addField('Moderation Commands(1)', "`purgeall`")
-			.setFooter('Want more help? user the "a!help" command!')
+			.setFooter('Want more help? use the "a!help" command!')
 			.setTimestamp();
 			message.channel.send(membed)
 		}
+		if (!modperms) return;
 		
 		
+	})
+
+	command(client, 'ban', message => {
+		const { member, mentions } = message 
+
+		if (member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')) {
+			console.log('WORKS....')
+		} else {
+			message.channel.send(`<@${member.id}> You do not have permissions to use this command!`)
+		}
 	})
 });
 
