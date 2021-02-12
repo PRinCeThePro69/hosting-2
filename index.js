@@ -81,11 +81,11 @@ client.once('ready', () => {
 		const { member, mentions } = message 
 
 		if (member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')) {
-			console.log('WORKS....')
+			const target = mentions.users.first
+			console.log(target)
 		} else {
-			
+			message.channel.send(`<@${member.id}> You do not have the permissions to use this command!`)
 		}
-		message.channel.send(`<@${member.id}> You do not have permissions to use this command!`)
 	})
 });
 
